@@ -1,25 +1,49 @@
-//New York Times API
+// New York Times API
 // Built by LucyBot. www.lucybot.com
-var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
-url += '?' + $.param({
-  'api-key': "d88fc801606f4f28975b0a6761df23e7"
-});
-$.ajax({
-  url: url,
-  method: 'GET',
-}).done(function(result) {
-  console.log(result);
-}).fail(function(err) {
-  throw err;
-});
+// var url = "https://api.nytimes.com/svc/topstories/v2/home.json";
+// url += '?' + $.param({
+//   'api-key': "d88fc801606f4f28975b0a6761df23e7"
+// });
+// $.ajax({
+//   url: url,
+//   method: 'GET',
+// }).done(function(result) {
+//   console.log(result);
+// }).fail(function(err) {
+//   throw err;
+// });
 
-//API MENU
+//API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
-    var selected = $(this).val();
-    if (selected !== "") {
-      console.log("The value you picked is: " + selected);
-    }
+  var selected = $(this).val();
+  console.log(selected);
+  //New York Times API
+  // Built by LucyBot. www.lucybot.com
+  var url = "https://api.nytimes.com/svc/topstories/v2/"+selected+".json";
+  url += '?' + $.param({
+    'api-key': "d88fc801606f4f28975b0a6761df23e7"
   });
+  console.log(url);
+  $.ajax({
+    url: url,
+    method: 'GET',
+  }).done(function(data) {
+    $.each(data.results,function(key,value){
+      console.log(value.abstract);
+      $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>')
+    })
+    
+  });
+  
+  // .fail(function(err) {
+  //   throw err;
+  // });
+  
+  
+  if (selected !== "") {
+    console.log("The value you picked is: " + selected);
+  }
+});
 
 
 // $("button").on("click", function() {
@@ -31,12 +55,12 @@ $("#nyt-section").on("change", function() {
 //     })
 //       .done(function(data){
 //       console.log(data);
-      
+
 //       $.each(data, function(key, dogs){
 //           $('ul').append(`<li>${dogs.name}</li>`);
 //         console.log(key, dogs.name);
 //       })
-      
+
 //     })
 //       .fail(function(error){
 //           $('ul').append(`<li>Sorry, there was a problem, please try again.</li>`)
@@ -47,17 +71,17 @@ $("#nyt-section").on("change", function() {
 //         $('.loading').delay(5000).remove('');
 //         console.log('yay');
 //     });
-    
+
 //   }); // end of the click event
-    
-    // $.ajax({
-      
-  //   }).done(function(data) {
-  //     $.each(data, function(key, value) {
-  //       /* Append your list items here */
-  //     });
-  //   });
-  // });
+
+// $.ajax({
+
+//   }).done(function(data) {
+//     $.each(data, function(key, value) {
+//       /* Append your list items here */
+//     });
+//   });
+// });
 
 //   $("button").on("click", function() {
 //   var url = "https://api.nytimes.com/svc/topstories/v2/opinion.json";
@@ -69,7 +93,7 @@ $("#nyt-section").on("change", function() {
 //   url: url,
 //   method: 'GET',
 // })
-    
+
 //     .done(function(result) {
 //         console.log(result);
 // })
@@ -82,7 +106,7 @@ $("#nyt-section").on("change", function() {
 
 // $('#get-weather').on("click",function(){
 //     $('.post-results').remove('');
-    
+
 //     $.ajax({
 //         method: 'GET',
 //         url: 'http://api.openweathermap.org/data/2.5/weather?q=Vancouver,ca&appid=4a48e1e1428fd83889074671fbf259d9'
@@ -101,20 +125,20 @@ $("#nyt-section").on("change", function() {
 // .append(`${value.icon}`);
 //         })
 
-   
-    
+
+
 //  });
 
 
 
-        // $.each(data,function(key,value){
-        //     console.log(value);
-        // }
-        // console.log(weather);
-        // $('.weather-widget').append(`<img>${weather.icon}</img>`)
-        // .append(`<p>${weather.main}</p>`)
-        // .append(`<p>${weather.description}</p>`);
-        // console.log('gottem');
+// $.each(data,function(key,value){
+//     console.log(value);
+// }
+// console.log(weather);
+// $('.weather-widget').append(`<img>${weather.icon}</img>`)
+// .append(`<p>${weather.main}</p>`)
+// .append(`<p>${weather.description}</p>`);
+// console.log('gottem');
 //     });
 
 // $('.getalbums').on("click",function(){
