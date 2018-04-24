@@ -29,8 +29,9 @@ $("#nyt-section").on("change", function() {
     method: 'GET',
   }).done(function(data) {
     $.each(data.results,function(key,value){
-      console.log(value.abstract);
+      console.log(value.multimedia[0].url);
       $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>')
+      $('.story').css('background-image','url:"'+value.multimedia[0].url +'"')
     })
     
   });

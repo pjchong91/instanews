@@ -110,3 +110,8 @@ body{
 p.copyright{
     color: #c2c2c2;
 }
+
+.story{
+    height: 300px;
+    width: 300px;
+}
