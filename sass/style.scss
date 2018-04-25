@@ -1,5 +1,5 @@
-$base-color: blue;
+@import 'fonts';
+@import 'variables';
+@import 'mixins';
+@import 'base';
 
-body{
-    background-color: $base-color;
-}

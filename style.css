@@ -124,6 +124,14 @@ body{
     margin-top: auto;
 }
 
+.logoAndSelection{
+    border: 3px solid green;
+}
+
+.selection {
+    border: 3px dotted pink;
+}
+
 div.results{
     display: flex;
     flex-direction: column;
