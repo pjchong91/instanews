@@ -20,6 +20,8 @@ $("#nyt-section").on("change", function() {
   var itemCount = 0;
   var selected = $(this).val();
   console.log(selected);
+$('body').css('height','auto');
+
   //New York Times API
   // Built by LucyBot. www.lucybot.com
   var url = "https://api.nytimes.com/svc/topstories/v2/"+selected+".json";
@@ -52,7 +54,6 @@ $("#nyt-section").on("change", function() {
     });
 });
 
-   
 // $("button").on("click", function() {
 //   $('body').append(`<p class="loading">Loading...</p>`)
 //     $('.repo-list li').remove('')

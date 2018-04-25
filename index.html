@@ -5,42 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Instanews</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./build/css/style.min.css"> <!--CHANGE LINKS TO MINIFIED FILES -->
 </head>
 
 
 <body>
-        <img src="./images/nyt-logo.svg">
+    <header></header>
+    <div class="logoAndSelect">
+        <img class="logo" src="./images/nyt-logo.svg">
 
-<p>Choose a section:</p>
-        <select id="nyt-section">
-                <option value="">Sections ...</option>
-                <option value="opinion" class="param">Opinion</option>
-                <option value="world" class="param">World</option>
-                <option value="national" class="param">National</option>
-                <option value="politics" class="param">Politics</option>
-                <option value="upshot" class="param">Upshot</option>
-                <option value="nyregion">Nyregion</option>
-                <option value="business">Business</option>
-                <option value="technology">Technology</option>
-                <option value="science">Science</option>
-                <option value="health">Health</option>
-                <option value="sports">Sports</option>
-                <option value="arts">Arts</option>
-                <option value="books">Books</option>
-                <option value="movies">Movies</option>
-                <option value="theater">Theater</option>
-                <option value="sundayreview">Sundayreview</option>
-                <option value="fashion">Fashion</option>
-                <option value="tmagazine">Tmagazine</option>
-                <option value="food">Food</option>
-                <option value="travel">Travel</option>
-                <option value="magazine">Magazine</option>
-                <option value="realestate">Realestate</option>
-                <option value="automobiles">Automobiles</option>
-                <option value="obituaries">Obituaries</option>
-                <option value="insider">Insider</option>
-             </select>
+            <p>Choose a section:</p>
+            <select id="nyt-section">
+                    <option value="">Sections ...</option>
+                    <option value="opinion" class="param">Opinion</option>
+                    <option value="world" class="param">World</option>
+                    <option value="national" class="param">National</option>
+                    <option value="politics" class="param">Politics</option>
+                    <option value="upshot" class="param">Upshot</option>
+                    <option value="nyregion">Nyregion</option>
+                    <option value="business">Business</option>
+                    <option value="technology">Technology</option>
+                    <option value="science">Science</option>
+                    <option value="health">Health</option>
+                    <option value="sports">Sports</option>
+                    <option value="arts">Arts</option>
+                    <option value="books">Books</option>
+                    <option value="movies">Movies</option>
+                    <option value="theater">Theater</option>
+                    <option value="sundayreview">Sundayreview</option>
+                    <option value="fashion">Fashion</option>
+                    <option value="tmagazine">Tmagazine</option>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                    <option value="magazine">Magazine</option>
+                    <option value="realestate">Realestate</option>
+                    <option value="automobiles">Automobiles</option>
+                    <option value="obituaries">Obituaries</option>
+                    <option value="insider">Insider</option>
+                </select>
+
+            </div>
 
              <div class="results">
                 
@@ -81,6 +85,6 @@
         
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     <!-- <script src="./build/js/script.min.js"></script> -->
-    <script src="./js/script.js"></script>
+    <script src="./build/js/script.js"></script><!--CHANGE LINKS TO MINIFIED FILES -->
 </body>
 </html>
