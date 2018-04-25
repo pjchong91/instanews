@@ -15,6 +15,7 @@
 
 // API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
+  $('.results').empty();
   var selected = $(this).val();
   console.log(selected);
   //New York Times API
@@ -31,14 +32,24 @@ $("#nyt-section").on("change", function() {
   .done(function(data) {
     // console.log(data);
     $.each(data.results,function(key,value){
-      // console.log(value);
-      $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>');
-      $('.results').append(`<img src="${value.multimedia[4]}">`);
-      console.log(value.multimedia[4].url);
+
+     if (value.multimedia.length>0){
+      //  $('.results').append(`<img src="${value.multimedia[4].url}">`);
+      $('.results').append('<div class="story" style="background-image: url('+value.multimedia[4].url+')"><p>'+value.abstract+'</p></div>');
+      // $(this).css('background-image','url(' + value.multimedia[4].url + ')');
+     
+      }
+        
+      })
+  //  console.log(value.multimedia);
+      // $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>');
+      // .append(`<img src="${value.multimedia[4].url}">`);
+      // $('.results').append(`<img src="${value.multimedia[4]}">`);
+      // console.log(value.multimedia[4].url);
       // $('.story').css('background-image','url:"'+value.multimedia[0].url +'"')
     });
 });
-});
+
     // 
     //   
      

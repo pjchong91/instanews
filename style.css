@@ -114,5 +114,20 @@ p.copyright{
 .story{
     height: 300px;
     width: 300px;
-    
+    background-color: green;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.story p{
+    background-color: rgba(0,0,0,0.6);
+}
+
+img{
+    max-width: 200px;
+    max-height: 200px;
 }
