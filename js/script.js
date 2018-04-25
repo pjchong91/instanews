@@ -30,12 +30,13 @@ $("#nyt-section").on("change", function() {
     method: 'GET',
   })
   .done(function(data) {
-    // console.log(data);
+    console.log(data.results);
     $.each(data.results,function(key,value){
 
      if (value.multimedia.length>0){
+       console.log(value.short_url);
       //  $('.results').append(`<img src="${value.multimedia[4].url}">`);
-      $('.results').append('<div class="story" style="background-image: url('+value.multimedia[4].url+')"><p>'+value.abstract+'</p></div>');
+      $('.results').append('<div class="story" style="background-image: url('+value.multimedia[4].url+')"><a href="'+value.short_url+'"><p>'+value.abstract+'</p></a></div>');
       // $(this).css('background-image','url(' + value.multimedia[4].url + ')');
      
       }
