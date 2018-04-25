@@ -116,6 +116,10 @@ select {
     width: 100px;
 }
 
+div {
+    border: 3px solid red;
+}
+
 a {
     text-decoration: none;
     color: #ffffff;
@@ -126,8 +130,8 @@ p.copyright{
 }
 
 .story{
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 100%;
     background-color: green;
     background-size: cover;
     background-position: center;
@@ -135,13 +139,25 @@ p.copyright{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    
 }
 
 .story p{
     background-color: rgba(0,0,0,0.6);
 }
 
-img{
-    max-width: 200px;
-    max-height: 200px;
+@media all and (min-width:600px){
+    .story {
+        width: 50vw;
+        flex-grow: 0.5;
+    }
+    
+    .results div{
+        display: flex;
+        flex-wrap: wrap;
+    }
 }
+
+@media all and (min-width:1000px){
+
+

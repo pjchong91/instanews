@@ -13,6 +13,7 @@
 //   throw err;
 // });
 
+var itemCount = 0;
 // API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
   $('.results').empty();
@@ -35,41 +36,22 @@ $("#nyt-section").on("change", function() {
 
      if (value.multimedia.length>0){
        console.log(value.short_url);
+       itemCount++;
+      
+
       //  $('.results').append(`<img src="${value.multimedia[4].url}">`);
-      $('.results').append('<div class="story" style="background-image: url('+value.multimedia[4].url+')"><a href="'+value.short_url+'"><p>'+value.abstract+'</p></a></div>');
+      $('.results').append('<a href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p>'+value.abstract+'</p></div></a>');
       // $(this).css('background-image','url(' + value.multimedia[4].url + ')');
-     
+     console.log(itemCount);
+     return itemCount<12;
       }
         
       })
-  //  console.log(value.multimedia);
-      // $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>');
-      // .append(`<img src="${value.multimedia[4].url}">`);
-      // $('.results').append(`<img src="${value.multimedia[4]}">`);
-      // console.log(value.multimedia[4].url);
-      // $('.story').css('background-image','url:"'+value.multimedia[0].url +'"')
+
     });
 });
 
-    // 
-    //   
-     
-      
-  //   })
-    
-  // });
-  
-  // .fail(function(err) {
-  //   throw err;
-  // });
-  
-  
-//   if (selected !== "") {
-//     console.log("The value you picked is: " + selected);
-//   }
-// });
-
-
+   
 // $("button").on("click", function() {
 //   $('body').append(`<p class="loading">Loading...</p>`)
 //     $('.repo-list li').remove('')
