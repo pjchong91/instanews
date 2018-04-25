@@ -12,8 +12,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: 3px solid violet;
-  
 }
 
 .loading{
@@ -24,20 +22,17 @@ body{
     max-width: 200px;
 }
 
-.logo{
+.logo img{
     display: block;
     margin: 0 auto;
-
 }
 
 .logoAndSelection{
-    border: 3px solid green;
     width: 60%;
     margin-top: auto;
 }
 
 .selection {
-    border: 3px dotted pink;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,7 +58,6 @@ p.copyright{
 }
 
 footer{
-    border: 3px solid coral;
     margin-top: auto;
 }
 
@@ -83,6 +77,12 @@ footer{
 }
 
 @media all and (min-width:600px){
+    .logoAndSelection{
+        display: flex;
+        flex-direction: row;
+        width: auto;
+    }
+
     div.results {
         flex-direction: row;
         flex-wrap: wrap;
@@ -93,6 +93,8 @@ footer{
         flex-grow: 1;
         flex-shrink: 1;
     }
+
+
 }
 
 @media all and (min-width:1000px){
@@ -100,6 +102,10 @@ footer{
         width: 25%;
         flex-grow: 1;
         flex-shrink: 1;
+    }
+
+    body {
+        align-items: left;
     }
 
 }

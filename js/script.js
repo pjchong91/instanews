@@ -54,7 +54,7 @@ $("#nyt-section").on("change", function() {
       .always(function(){
           $('.loading').css('display','none');
       })//end of .always
-     }, 3000) //end of timeout
+     }, 1000) //end of timeout
 
 });
 
