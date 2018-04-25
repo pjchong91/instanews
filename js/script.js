@@ -13,7 +13,7 @@
 //   throw err;
 // });
 
-//API MENU - Select a section to access with New York Times API
+// API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
   var selected = $(this).val();
   console.log(selected);
@@ -27,24 +27,35 @@ $("#nyt-section").on("change", function() {
   $.ajax({
     url: url,
     method: 'GET',
-  }).done(function(data) {
+  })
+  .done(function(data) {
+    // console.log(data);
     $.each(data.results,function(key,value){
-      console.log(value.multimedia[0].url);
-      $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>')
-      $('.story').css('background-image','url:"'+value.multimedia[0].url +'"')
-    })
+      // console.log(value);
+      $('.results').append('<div class="story"><p>'+value.abstract+'</p></div>');
+      $('.results').append(`<img src="${value.multimedia[4]}">`);
+      console.log(value.multimedia[4].url);
+      // $('.story').css('background-image','url:"'+value.multimedia[0].url +'"')
+    });
+});
+});
+    // 
+    //   
+     
+      
+  //   })
     
-  });
+  // });
   
   // .fail(function(err) {
   //   throw err;
   // });
   
   
-  if (selected !== "") {
-    console.log("The value you picked is: " + selected);
-  }
-});
+//   if (selected !== "") {
+//     console.log("The value you picked is: " + selected);
+//   }
+// });
 
 
 // $("button").on("click", function() {
