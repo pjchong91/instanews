@@ -17,6 +17,7 @@ var itemCount = 0;
 // API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
   $('.results').empty();
+  var itemCount = 0;
   var selected = $(this).val();
   console.log(selected);
   //New York Times API
@@ -40,7 +41,7 @@ $("#nyt-section").on("change", function() {
       
 
       //  $('.results').append(`<img src="${value.multimedia[4].url}">`);
-      $('.results').append('<a href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p>'+value.abstract+'</p></div></a>');
+      $('.results').append('<div class="box"><a href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p>'+value.abstract+'</p></div></a></div>');
       // $(this).css('background-image','url(' + value.multimedia[4].url + ')');
      console.log(itemCount);
      return itemCount<12;

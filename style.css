@@ -100,6 +100,11 @@ table {
 }
 
 /* START OF OWN CSS */
+
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: black;
     font-size: 16px;
@@ -109,15 +114,15 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
 
+div.results{
+    display: flex;
+    flex-direction: column;
 }
 
 select {
     width: 100px;
-}
-
-div {
-    border: 3px solid red;
 }
 
 a {
@@ -132,14 +137,12 @@ p.copyright{
 .story{
     height: 400px;
     width: 100%;
-    background-color: green;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
     align-items: flex-end;
     justify-content: center;
-    
 }
 
 .story p{
@@ -147,17 +150,23 @@ p.copyright{
 }
 
 @media all and (min-width:600px){
-    .story {
-        width: 50vw;
-        flex-grow: 0.5;
-    }
-    
-    .results div{
-        display: flex;
+    div.results {
+        flex-direction: row;
         flex-wrap: wrap;
+    }   
+
+    .box {
+        width: 50%;
+        flex-grow: 1;
+        flex-shrink: 1;
     }
 }
 
 @media all and (min-width:1000px){
+    .box {
+        width: 25%;
+        flex-grow: 1;
+        flex-shrink: 1;
+    }
 
-
+}
