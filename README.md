@@ -8,7 +8,7 @@
 
 ##Questions Encountered and Learning Acquired:
 *Q - What is the purpose of Gulp?
-- Gulp can be used to minify our project (ie. remove white space from our files)
+- Gulp can be used to download useful node packages.  Some of the packages we have used have functionalities that allow us to minify certain files from our project (ie. remove white space from our files), do error checking, rename/move files, etc.  We have also enabled browser-sync, which can automatically refreshes the browser when certain 'watched' files are altered.
 
-*Q - 
-- Ajax 'GET' request can be used to retrieve information from a parsed JSON file
+*Q - What is Ajax?
+- Ajax is a ________________.  The 'GET' method can be used to retrieve information from a parsed JSON file.
