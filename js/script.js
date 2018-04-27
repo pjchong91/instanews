@@ -19,13 +19,15 @@ var itemCount = 0;
 // API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
     $('.results').empty();
-    $('.logo').toggleClass('active');
+    $('header').toggleClass('active');
   console.log($(this.value));
     var itemCount = 0;
     var selected = $(this).val();
   
     $('body').css('height','auto');
-    $('.loading').css('display','block');
+
+    setTimeout(function(){
+    $('.loading').css('display','block'),2000});
  
     
     setTimeout(function(){
@@ -56,9 +58,9 @@ $("#nyt-section").on("change", function() {
       })//end of .done
       
       .always(function(){
-          $('.loading').css('display','none');
+        $('.loading').css('display','none');
       })//end of .always
-     }, 1000) //end of timeout
+      }, 1000) //end of timeout
 
 });
 
