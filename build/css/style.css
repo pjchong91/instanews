@@ -205,6 +205,7 @@ p.abstract {
   .selection p {
     margin-left: 0;
     margin-right: 0;
+    margin-top: 0;
     font-size: 0.9rem; }
   .selection {
     -webkit-box-align: start;
@@ -251,7 +252,27 @@ p.abstract {
   .selection p {
     font-size: 1.0rem; }
   header.active {
-    margin-left: 50px; } }
+    margin-left: 0px; }
+  body {
+    -webkit-box-align: left;
+        -ms-flex-align: left;
+            align-items: left;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left; }
+  p.copyright {
+    padding: 30px;
+    margin-bottom: 0; }
+  .logoAndSelection {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px); }
+  .selection {
+    padding-left: 50px;
+    padding-right: 50px; }
+  .active img {
+    width: auto; }
+  .active .selection {
+    padding-left: 100px; } }
 
 .box p {
   -webkit-transition: .5s;
