@@ -18,12 +18,14 @@ body{
     margin-top: auto;
     @extend .flex-center;
     flex-direction: column;
+    transition: all 1s ease-in-out ;
 
 }
 
 .selection{
     @extend .flex-center;
     flex-direction: column;
+    transition: all 1s ease-in-out ;
 }
 
 img.logo{
@@ -31,7 +33,8 @@ img.logo{
     width: auto;
     max-width: 100%;
     display: block;
-    transition: all 0.5s ease-in-out ;
+    transition: all 1s ease-in-out ;
+    
 }
 
 .active img{
@@ -192,8 +195,5 @@ p.abstract{
 
     .active .selection{
         padding-left: 100px;
-       
     }
 }
-
-// Change margins on copyright

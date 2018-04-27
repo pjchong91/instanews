@@ -109,21 +109,25 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
 
 .selection {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
 
 img.logo {
   margin: 0 auto;
   width: auto;
   max-width: 100%;
   display: block;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out; }
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out; }
 
 .active img {
   max-height: 150px; }
