@@ -13,11 +13,14 @@
 //   throw err;
 // });
 
+// "transform":"scale(0.6)",
+
 var itemCount = 0;
 // API MENU - Select a section to access with New York Times API
 $("#nyt-section").on("change", function() {
     $('.results').empty();
-  
+    $('.logo').toggleClass('active');
+  console.log($(this.value));
     var itemCount = 0;
     var selected = $(this).val();
   
@@ -43,9 +46,10 @@ $("#nyt-section").on("change", function() {
 
       .done(function(data) {
         $.each(data.results,function(key,value){
+          console.log(data.results);
           if (value.multimedia.length>0){
             itemCount++;
-            $('.results').append('<div class="box"><a href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p>'+value.abstract+'</p></div></a></div>');
+            $('.results').append('<a class="box" href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p class="abstract hidden">'+value.abstract+'</p></div></a>');
           return itemCount<12; 
           }
         }) //end of $.each
@@ -57,6 +61,12 @@ $("#nyt-section").on("change", function() {
      }, 1000) //end of timeout
 
 });
+
+
+
+
+
+
 
 // $("button").on("click", function() {
 //   $('body').append(`<p class="loading">Loading...</p>`)

@@ -16,15 +16,24 @@ body{
 
 .loading{
     display: none;
+
+    img{
+        max-width: 200px;
+    }
 }
 
-.loading img{
-    max-width: 200px;
-}
 
-.logo img{
+img.logo{
+    height: 300px;
     display: block;
     margin: 0 auto;
+    transition: 2s ease-in-out ;
+}
+
+.active{
+    transform: scale(0.6);
+    height: auto;
+    width: 100%;
 }
 
 .logoAndSelection{
@@ -46,6 +55,7 @@ select {
 div.results{
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 a {
@@ -72,18 +82,30 @@ footer{
     justify-content: center;
 }
 
-.story p{
+p.abstract{
     background-color: rgba(0,0,0,0.6);
-    
 }
 
-
+.hidden {
+    opacity: 0;
+}
 
 @media all and (min-width:600px){
     .logoAndSelection{
         display: flex;
         flex-direction: row;
         width: auto;
+        transform:translateX(-90px);
+    }
+
+    img.logo{
+        width: 25vw;
+  
+        height: auto;
+      
+        display: block;
+        margin: 0 auto;
+        
     }
 
     div.results {
@@ -105,6 +127,10 @@ footer{
         width: 25%;
         flex-grow: 1;
         flex-shrink: 1;
+    }
+
+    .logoAndSelection {
+        transform:translateX(0px);
     }
 
     body {
