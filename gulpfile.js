@@ -22,14 +22,6 @@ gulp.task("sass", function() {
       .pipe(gulp.dest("./build/css"));
   });
 
-// function(){
-//     return gulp
-//     .src('./js/*.js') //Grab all files from this directory
-//     .pipe(uglify()) //Uglify them
-//     .pipe(rename({ extname: ".min.js" }))//Add .min.js to the filename
-//     .pipe(gulp.dest("./build/js")); 
-// }
-
 gulp.task('lint', () =>{
     return gulp
     .src(['./js/*.js', '!node_modules/**'])
@@ -45,8 +37,6 @@ gulp.task("scripts", gulp.series("lint", function(){
     .pipe(rename({ extname: ".min.js" }))//Add .min.js to the filename
     .pipe(gulp.dest("./build/js")); 
 } ));
-
-
 
 gulp.task("watch", function(done){
     gulp.watch('js/*.js', gulp.series('scripts'));

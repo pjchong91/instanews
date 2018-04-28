@@ -44,3 +44,9 @@ $('#nyt-section').on('change', function() {
       })//end of .always
     }, 1000) //end of timeout
 });
+
+//Selectric:
+
+$(function() {
+  $('#nyt-section').selectric();
+});
