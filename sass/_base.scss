@@ -92,17 +92,7 @@ div.results{
     }
   }
 
-.box { 
-    p {
-        transition: 0.7s;
-    }
-    &:hover {
-        p {
-            opacity: 1;
-            animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-        }
-    }
-}
+
 
 a {
     text-decoration: none;
@@ -137,7 +127,7 @@ p.abstract{
 }
 
 .hidden {
-    opacity: 0;
+    opacity: 1;
 }
 
 @media all and (min-width:600px){
@@ -209,6 +199,19 @@ p.abstract{
         width: 25%;
         flex-grow: 1;
         flex-shrink: 1;
+        p { 
+            transition: 0.7s;
+        }
+        &:hover {
+            p {
+                opacity: 1;
+                animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+            }
+        }
+    }
+
+    .hidden {
+        opacity: 0;
     }
 
     .selection p{

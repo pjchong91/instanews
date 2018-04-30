@@ -392,15 +392,6 @@ div.results {
     transform: rotateX(0);
     opacity: 1; } }
 
-.box p {
-  -webkit-transition: 0.7s;
-  transition: 0.7s; }
-
-.box:hover p {
-  opacity: 1;
-  -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-          animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
-
 a {
   text-decoration: none;
   color: #ffffff; }
@@ -435,7 +426,7 @@ p.abstract {
   padding: 10px; }
 
 .hidden {
-  opacity: 0; }
+  opacity: 1; }
 
 @media all and (min-width: 600px) {
   header {
@@ -510,6 +501,15 @@ p.abstract {
             flex-grow: 1;
     -ms-flex-negative: 1;
         flex-shrink: 1; }
+    .box p {
+      -webkit-transition: 0.7s;
+      transition: 0.7s; }
+    .box:hover p {
+      opacity: 1;
+      -webkit-animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+              animation: flip-in-hor-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
+  .hidden {
+    opacity: 0; }
   .selection p {
     font-size: 1.0rem; }
   body {
