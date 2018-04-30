@@ -12,29 +12,22 @@ body{
     flex-direction: column;
 }
 
-.logoAndSelection{
-    min-width: 200px;
-    padding: 30px;
+header{
     margin-top: auto;
     @extend .flex-center;
     flex-direction: column;
+    max-width: 60%;
     transition: all 1s ease-in-out ;
-
 }
 
 .selection{
     @extend .flex-center;
     flex-direction: column;
-    transition: all 1s ease-in-out ;
-}
 
+}
 img.logo{
-    margin: 0 auto;
-    width: auto;
-    max-width: 100%;
-    display: block;
-    transition: all 1s ease-in-out ;
-    
+    height: auto;
+    width: 100%;
 }
 
 .active img{
@@ -42,22 +35,23 @@ img.logo{
 }
 
 header.active{
-    max-height: 300px;
+    max-width: 40%;
+    padding: 30px 0 40px 0;
 }
 
 .selection p{
-    margin: 15px;
+    margin: 15px 0px;
     font-size: 0.8rem;
+    width: 150px;
+    text-align: center;
 }
 
-select{
-    font-size: 1.125rem;
-    width: 120px;
+select{ //EXPAND SELECTRIC WIDTH
+    width: 150px;
 }
 
 .loading{
     display: none;
-    margin: 0 auto;
     transform: translateY(-100px);
         img{
             max-width: 50px;
@@ -70,17 +64,43 @@ div.results{
     width: 100%;
 }
 
-.box { //target p with &:hover --> on css it looks like &:hover p{}
+//Animation from Animista: http://animista.net
+ @-webkit-keyframes flip-in-hor-top {
+    0% {
+      -webkit-transform: rotateX(-80deg);
+              transform: rotateX(-80deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes flip-in-hor-top {
+    0% {
+      -webkit-transform: rotateX(-80deg);
+              transform: rotateX(-80deg);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: rotateX(0);
+              transform: rotateX(0);
+      opacity: 1;
+    }
+  }
+
+.box { 
     p {
-        transition: .5s;
+        transition: 0.7s;
     }
     &:hover {
         p {
             opacity: 1;
+            animation: flip-in-hor-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
         }
     }
 }
-
 
 a {
     text-decoration: none;
@@ -90,7 +110,7 @@ a {
 p.copyright{
     color: #c2c2c2;   
     font-size: 0.875rem;
-    margin-bottom: 40px;
+    margin: 30px 30px 40px 30px;
 }
 
 footer{
@@ -119,40 +139,55 @@ p.abstract{
 }
 
 @media all and (min-width:600px){
-    .logoAndSelection{
+    header{
         flex-direction: row;
-        width: auto;
-        transform:translateX(-90px);
+        justify-content: space-between;
+        max-width: 50%;
+        transform:translateX(-40px);
+    }
+
+    header.active{
+        max-width: 60%;
+        transform: translateX(0);
     }
 
     .selection p{
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
         font-size: 0.9rem;
+        text-align: left;
     }
 
     .selection{
         align-items: flex-start;
         justify-content: left;
+        transform: translateY(-20px);
+        padding: 15px;
+        .active &{
+            width: 70%;
+            margin: 15px;
+            transform: translateY(-10px);
+        }
     }
 
     .loading{
-        transform: translateY(0)
+        transform: translateY(0px);
     }
 
     img.logo{
-        width: 20vw;
-        height: auto; 
+        height: auto;
+        width: 100%;
     }
 
     .active img{
-        max-height: 80px;
+        max-height: 70px;
+        width: auto;
+        margin-left: 110px;
+        margin-right: 60px;
     }
 
     header.active{
         align-self: flex-start;
-        margin-left: 100px;
+        padding: 0px;
+        max-width: none;
     }
 
     div.results {
@@ -178,34 +213,24 @@ p.abstract{
         font-size: 1.0rem;
     }
 
-    header.active{
-        margin-left: 0px;
-    }
-
     body{
-        align-items: left;
+        align-items: flex-start;
         justify-content: left;
     }
 
-    p.copyright{
-        padding: 30px;
-        margin-bottom: 0;
-    }
-
-    .logoAndSelection{
-        transform:translateX(0px);
-    }
-
-    .selection{
-        padding-left: 50px;
-        padding-right: 50px;
+    header{
+        transform: translateX(0px);
+        justify-content: space-between;
+        width: 42%;
+        max-width: 480px;
+        margin-left: 30px;
     }
 
     .active img{
-        width: auto;
+        margin-left: 0px;
     }
 
-    .active .selection{
-        padding-left: 100px;
+    .loading {
+        margin: 0 auto;
     }
 }

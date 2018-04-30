@@ -7,12 +7,8 @@ $('#nyt-section').on('change', function() {
     var selected = $(this).val();
   
     $('body').css('height','auto');
-
-    setTimeout(function(){ //allows for user to view 'loader img' - can be removed for performance after marking
-    $('.loading').css('display','block'),2000});
+    $('.loading').css('display','block')
  
-    setTimeout(function(){
-
   //New York Times API from: https://developer.nytimes.com/top_stories_v2.json
   // Built by LucyBot. www.lucybot.com
     var url = 'https://api.nytimes.com/svc/topstories/v2/'+selected+'.json';
@@ -26,12 +22,13 @@ $('#nyt-section').on('change', function() {
         }) //closes .ajax
 
       .done(function(data) {
-        $.each(data.results,function(key,value){
-          if (value.multimedia.length>0){
-            itemCount++;
-            $('.results').append('<a class="box" href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p class="abstract hidden">'+value.abstract+'</p></div></a>');
-          return itemCount<12; 
-          }
+        var goodResults= data.results.filter(function(value){
+            return value.multimedia.length>0;
+          })
+          .slice(0,12);
+
+        $.each(goodResults,function(key,value){
+          $('.results').append('<a class="box" href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p class="abstract hidden">'+value.abstract+'</p></div></a>');
         }) //end of $.each
       }) //end of .done
 
@@ -42,11 +39,9 @@ $('#nyt-section').on('change', function() {
       .always(function(){
         $('.loading').css('display','none');
       })//end of .always
-    }, 1000) //end of timeout
-});
+  }); //end of on'change'
 
 //Selectric:
-
 $(function() {
   $('#nyt-section').selectric();
 });
