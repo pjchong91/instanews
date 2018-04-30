@@ -1,3 +1,5 @@
+$( document ).ready(function() {
+
 // API MENU - Select a section to access with New York Times API
 $('#nyt-section').on('change', function() {
     $('.results').empty();
@@ -43,4 +45,5 @@ $('#nyt-section').on('change', function() {
 //Selectric:
 $(function() {
   $('#nyt-section').selectric();
+});
 });

@@ -17,6 +17,7 @@ header{
     @extend .flex-center;
     flex-direction: column;
     max-width: 60%;
+    height: 100%;
     transition: all 1s ease-in-out ;
 }
 
@@ -37,6 +38,7 @@ img.logo{
 header.active{
     max-width: 40%;
     padding: 30px 0 40px 0;
+    height: auto;
 }
 
 .selection p{
