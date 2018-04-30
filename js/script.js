@@ -3,7 +3,6 @@ $('#nyt-section').on('change', function() {
     $('.results').empty();
     $('header').addClass('active');
  
-    var itemCount = 0;
     var selected = $(this).val();
   
     $('body').css('height','auto');
