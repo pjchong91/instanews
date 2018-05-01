@@ -17,8 +17,7 @@ header{
     @extend .flex-center;
     flex-direction: column;
     max-width: 60%;
-    // height: 100vh;
-    // transition: height 1s ease-in-out ;
+    transition: all 0.5s ease-in-out ;
 }
 
 .selection{
@@ -104,29 +103,27 @@ p.abstract{
 
 @media all and (min-width:600px){
 
+    body{
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+
     header{
         flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
         max-width: 50%;
         transform:translateX(-35px);
-        // margin: 0 auto;
-        // transition: height 1.5s;
+        margin: auto auto 0 auto;
     }
 
     header.active{
-        padding: 0px;
         margin: 0;
+        margin-left: 90px;
         max-width: 50%;
-        // transform: translateX(0px);
-        height: 6.25rem;
+        transform: translateX(0px);
+        height: 8.5rem;
         justify-content: center;
+        align-items: flex-start;
     }
-
-    // header.active{
-        // max-width: 60%;
-        // transform: translateX(0);
-    // }
 
     .selection p{
         font-size: 0.9rem;
@@ -140,7 +137,8 @@ p.abstract{
         padding: 15px;
         .active &{
             width: 70%;
-            margin: 15px;
+            margin-left: 80px;
+            padding: 0px;
             transform: translateY(-10px);
         }
     }
@@ -157,14 +155,8 @@ p.abstract{
 
     .active img{
         max-height: 70px;
-        transition: 1s ease-in;
         width: auto;
-        margin-right: 70px;
-        // margin-left: 110px;
-        // margin-right: 60px;
     }
-
-    
 
     div.results {
         flex-direction: row;
@@ -251,22 +243,28 @@ p.abstract{
     }
 
     header.active{
-        // height: auto; - removed to facilitate transition
-        margin: 15px;
-        padding: 15px;
+        margin-left: 30px;
+        width: auto;
+        max-width: none;
         transform: translateX(0px);
     }
 
     .active .selection{
         margin: 0px;
+        transform: translateY(-15px);
+        margin-left: 80px;
+        width: auto;
     }
 
     .active img{
-        margin-right: 0px;
-        
+        width: auto;
     }
 
     .loading {
         margin: 0 auto;
+    }
+
+    p.copyright{
+        text-align: left;
     }
 }

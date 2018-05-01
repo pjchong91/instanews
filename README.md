@@ -27,3 +27,4 @@
 ## Goals for Future Improvement:
 - Continue to practice and increase familiarity with SCSS.
 - Increasingly modify incorporated libraries to suit the designer's vision for the project.  For this project, I found it difficult to manipulate the Selectric files to maintain static width of the 'select' element.
+- Create a smooth transition for the header from the beginning UI to the compressed header after user makes a selection.  At this time it was difficult to manipulate the transitions and the desired outcome was not achieved for header transformation.

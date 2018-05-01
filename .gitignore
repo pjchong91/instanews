@@ -23,3 +23,7 @@ ehthumbs.db
 # Ignore packages #
 # =============== #
 node_modules/
+
+# Dev Tools #
+# =============== #
+gulpfile.js
