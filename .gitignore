@@ -24,6 +24,3 @@ ehthumbs.db
 # =============== #
 node_modules/
 
-# Dev Tools #
-# =============== #
-gulpfile.js
