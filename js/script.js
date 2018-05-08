@@ -1,7 +1,7 @@
-$( document ).ready(function() {
+$( document ).ready(() => {
 
 // API MENU - Select a section to access with New York Times API
-$('#nyt-section').on('change', function() {
+$('#nyt-section').on('change', function() { //??? CANT CHANGE TO ARROW
     $('.results').empty();
     $('header').addClass('active');
  
@@ -22,22 +22,27 @@ $('#nyt-section').on('change', function() {
         method: 'GET',
         }) //closes .ajax
 
-      .done(function(data) {
+      .done(data => {
         let goodResults= data.results.filter(function(value){
             return value.multimedia.length>0;
           })
           .slice(0,12);
 
         $.each(goodResults,function(key,value){
-          $('.results').append('<a class="box" href="'+value.short_url+'"><div class="story" style="background-image: url('+value.multimedia[4].url+')"><p class="abstract hidden">'+value.abstract+'</p></div></a>');
+          $('.results').append(`
+          <a class="box" href="${+value.short_url}">
+            <div class="story" style="background-image: url(${value.multimedia[4].url})">
+              <p class="abstract hidden">'${value.abstract}</p>
+            </div>
+          </a>`);
         }) //end of $.each
       }) //end of .done
 
-      .fail(function(){
+      .fail(() => {
         $('.results').append('<p>Sorry, it appears there is a problem with the page.</p>');
       }) //end of .fail
       
-      .always(function(){
+      .always(() => {
         $('.loading').css('display','none');
       })//end of .always
   }); //end of on'change'
