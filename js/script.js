@@ -5,14 +5,14 @@ $('#nyt-section').on('change', function() {
     $('.results').empty();
     $('header').addClass('active');
  
-    var selected = $(this).val();
+    let selected = $(this).val();
   
     $('body').css('height','auto');
     $('.loading').css('display','block')
  
   //New York Times API from: https://developer.nytimes.com/top_stories_v2.json
   // Built by LucyBot. www.lucybot.com
-    var url = 'https://api.nytimes.com/svc/topstories/v2/'+selected+'.json';
+    let url = 'https://api.nytimes.com/svc/topstories/v2/'+selected+'.json';
       url += '?' + $.param({
       'api-key': 'd88fc801606f4f28975b0a6761df23e7'
       }); //Closes $.param
@@ -23,7 +23,7 @@ $('#nyt-section').on('change', function() {
         }) //closes .ajax
 
       .done(function(data) {
-        var goodResults= data.results.filter(function(value){
+        let goodResults= data.results.filter(function(value){
             return value.multimedia.length>0;
           })
           .slice(0,12);
